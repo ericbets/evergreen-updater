@@ -1,0 +1,29 @@
+{
+  "name": "evergreen-updater",
+  "version": "1.0.0",
+  "description": "auto updater",
+  "main": "evergreen.js",
+  "dependencies": {
+    "fs-extra": "^7.0.1",
+    "isomorphic-git": "^0.54.2",
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericbets/evergreen-updater.git"
+  },
+  "keywords": [
+    "auto",
+    "update",
+    "git"
+  ],
+  "author": "Eric Faccer",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ericbets/evergreen-updater/issues"
+  },
+  "homepage": "https://github.com/ericbets/evergreen-updater#readme"
+}
