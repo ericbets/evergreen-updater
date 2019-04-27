@@ -5,7 +5,7 @@
   "main": "evergreen.js",
   "dependencies": {
     "fs-extra": "^7.0.1",
-    "isomorphic-git": "^0.54.2",
+    "isomorphic-git": "^0.54.2"
   },
   "devDependencies": {},
   "scripts": {
