@@ -9,7 +9,7 @@ Chuck a git repository somewhere on the web. Server done. Tell Evergreen the loc
 Usage
 -------
 ```js
-const Evergreen = require('evergreen');
+const Evergreen = require('evergreen-updater');
 const url = 'https://github.com/ericbets/evergreen';
 const project = './proj';
 const success = new Evergreen(url).update(project, 'production');
