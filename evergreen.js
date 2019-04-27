@@ -5,14 +5,13 @@ const git = require("isomorphic-git");
 git.plugins.set('fs', fs);
 
 class Evergreen {
-	constructor(url) {
-		this.url = url;
+	constructor() {
 	}
 
-	async update(dir, branch) {
+	async update(url, dir, branch) {
 		if (!fs.existsSync(dir + "/.git")) {
 			try {
-				await git.clone({dir: dir, url: this.url, ref: branch, singleBranch: true, depth: 1});
+				await git.clone({dir: dir, url: url, ref: branch, singleBranch: true, depth: 1});
 				await git.config({ dir: dir, path: 'evergreen.count', value: 0});
 				await git.branch({dir: dir, ref: "evergreen-" + branch + "-" + 0, checkout: true});
 			}
@@ -27,7 +26,7 @@ class Evergreen {
 			try {
 				count = await git.config({dir:dir, path: 'evergreen.count'});
 				count = Number.parseInt(count);
-				await git.fetch({dir: dir,url:this.url, ref: branch, singleBranch: true, remote: 'origin', tags: false});
+				await git.fetch({dir: dir,url:url, ref: branch, singleBranch: true, remote: 'origin', tags: false});
 				count = count+1;
 				await git.branch({dir: dir, ref: "evergreen-" + branch + "-" + count, checkout: true});
 				await git.config({ dir: dir, path: 'evergreen.count', value: count});

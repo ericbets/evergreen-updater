@@ -11,8 +11,8 @@ Usage
 ```js
 const Evergreen = require('evergreen-updater');
 const url = 'https://github.com/ericbets/evergreen-updater';
-const project = './proj';
-const success = new Evergreen(url).update(project, 'production');
+const projFolder = './proj';
+const success = new Evergreen().update(url, projFolder, 'production');
 ```
 
 Credits
